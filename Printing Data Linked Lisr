@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(){
+print_data(head);
+return 0;
+}
+void print_node(struct node *head){
+if(head===NULL){
+printf("Linked list is empty");
+}
+
+else{
+struct node *ptr=NULL;
+ptr=head;
+
+while(ptr!=NULL){
+printf("%d",&ptr->data);
+ptr=ptr->link;
+}
+
+}
+}
+
+

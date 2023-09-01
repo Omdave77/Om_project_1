@@ -1,0 +1,33 @@
+/* while(temp!=NULL)
+{
+ temp=temp->link;
+ free(head);
+ head=temp;
+}
+-----------------------------------*/
+
+struct node{ 
+int data;
+struct node *link;
+};
+
+int main(){
+ head=del_list(head);
+ if(head==NULL)
+  printf("Linked List deleted successfully");
+  return 0;
+}
+//---------------------------------------
+
+struct node* del_list(struct node *head)
+{
+ struct node *temp=head;
+
+  while(temp!=NULL)
+{
+ temp=temp->link;
+ free(head);
+ head=temp;
+}
+return head;
+}

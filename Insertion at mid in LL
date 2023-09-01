@@ -1,0 +1,54 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+struct node{
+int data;
+struct node *link;
+}
+
+int main()
+{
+struct node *head=malloc(sizeof(struct node));
+head->data=45;
+head->link=NULL;
+
+//this will add node at the end ...see in insertion at end 
+add_at_end(head,98);
+add_at_end(head,3);
+
+int data=67, position=3;
+
+add_at_pos(head,data,position);
+struct node *ptr=head;
+
+while(ptr!=NULL)
+{
+printf("%d",ptr->data);
+ptr=ptr->link;
+}
+return 0;
+}
+
+//----------------------
+void add_at_pos(struct node* head,int data, int pos)
+{
+//it wiil make ptr pointing to first node
+ struct node *ptr=head;
+
+//it will make node that is going to be inserted
+struct node *ptr2=malloc(sizeof(struct node));
+ptr2->data=data;
+ptr2->link=NULL;
+
+pos--;
+while(pos!=1)
+{
+ptr=ptr->link;
+pos--;
+}
+
+ptr2->link=ptr->link;
+ptr->link=ptr2;
+}
+
+

@@ -1,0 +1,45 @@
+/*
+while(head!=NULL){
+  
+temp2=head->link;
+head->link=temp;
+temp=head;
+head=temp2;
+  }
+head=temp;
+*/
+
+  #include<stdio.h>
+  #include<stdlib.h>
+
+  struct node{
+    int data;
+    struct node* link;
+    };
+
+  int main(){
+    head=reverse(head);
+    ptr=head;
+    while(ptr!=NULL)
+      {
+      printf("%d",ptr->data);
+      ptr=ptr->link;
+      }
+    return 0;
+    //--------------------------
+
+    struct node* reverse(struct node *head)
+    {
+      struct node *prev=NULL;
+      struct node *next=NULL;
+      
+      while(head!=NULL){
+  
+            temp2=head->link;
+            head->link=temp;
+            temp=head;
+            head=temp2;
+       }
+          head=temp;
+         return head;
+      }
